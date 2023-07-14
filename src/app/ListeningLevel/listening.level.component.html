@@ -1,0 +1,37 @@
+<div style="width: 80%; height: 100vh;margin: auto;">
+    <div style="width: 100%; display: flex; padding: 20px 0px; justify-content: center;">
+        <h1 style="flex: 1;"> Hi, {{user?.userId}} Welcome To Your Listening Level Panel </h1>
+        <div style="display: flex; gap: 5px; align-items: center;">
+            <h5>{{user?.userId}}</h5>
+            <h5 class="pi pi-power-off" style="cursor: pointer;" (click)="doLogout()"></h5>
+        </div>
+    </div>
+    <p-fieldset legend="Record listening level">
+        <form style="width: 100%;">
+            <div style="display: flex; justify-content: center;">
+                <p-dropdown name="listeinglevel" [options]="listeningLevelOptions" [(ngModel)]="selectedLevel" optionLabel="name" [required]="true" [ngStyle]="{'width': '200px'}"></p-dropdown>
+                <p-button name="submit" label="Submit" icon="pi pi-bookmark" (click)="onSubmit()"></p-button>
+            </div>
+        </form>
+    </p-fieldset>
+    <p-divider style="padding: 10px;"></p-divider>
+    <p-fieldset legend="Past listening levels">
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+            <div style="width: 200px;" *ngFor="let listeinglevel of listeningLevels">
+                <p-card [ngStyle]="{'position': 'relative'}" [ngClass]="listeinglevel.listeningLevel">
+                    <ng-template pTemplate="header">
+                        <div style="display: flex; padding: 20px 20px 0px 20px; align-items: center;">
+                            <div style="flex: 1; font-weight: bold; font-size: 25px;">
+                                {{listeinglevel.createdOn | date: 'dd-MM-yyyy'}}
+                            </div>
+                        </div>
+                    </ng-template>
+                    {{levelMapping.get(listeinglevel.listeningLevel)}}
+                    <div class="crud-layer">
+                        <i class="pi pi-trash" (click)="onDelete(listeinglevel.listeningId)"></i>
+                    </div>
+                </p-card>
+            </div>
+        </div>
+    </p-fieldset>
+</div>

@@ -1,0 +1,24 @@
+<div style="width: 100%;height: 100vh; display: flex; align-items: center;justify-content: center;">
+    <p-card>
+        <div style="display: flex;gap: 10px;">
+            <div>
+                <img src="../../assets/listening.png" alt="">
+            </div>
+            <div style="width: 400px; display: flex; gap: 20px; flex-direction: column;">
+                <h3 style="text-align: center;">Welcome to listening level</h3>
+                <h1 style="text-align: center;">LOGIN</h1>
+                <div style="display: flex;flex-direction: column;">
+                    <label for="userId" style="font-weight: 500;">UserName</label>
+                    <input pInputText type="test" name="userId" id="" style="padding: 10px;" [(ngModel)]="user.userId">
+                </div>
+                <div style="display: flex;flex-direction: column;">
+                    <label for="password" style="font-weight: 500;">Password</label>
+                    <input pInputText type="password" name="password" id="" style="padding: 10px;" [(ngModel)]="user.password">
+                </div>
+                <div>
+                    <p-button name="login" label="Login" (click)="onLogin()"></p-button>
+                </div>
+            </div>
+        </div>
+    </p-card>
+</div>

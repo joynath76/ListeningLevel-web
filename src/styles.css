@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.p-divider.p-divider-horizontal,
+.p-overlaypanel .p-overlaypanel-content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.p-dropdown,
+.p-inputtext {
+    width: 100%;
+}
+
+.GET>div, .LL1>div {
+    background-color: #48f38c;
+    border-radius: 5px;
+}
+
+.POST>div, .LL2>div {
+    background-color: #f0c55f;
+    border-radius: 5px;
+}
+
+.PUT>div, .LL3>div {
+    background-color: #7bb3eb;
+    border-radius: 5px;
+}
+
+.DELETE>div {
+    background-color: #cd6058;
+    border-radius: 5px;
+}
+
+.PATCH>div {
+    background-color: #ad9797;
+    border-radius: 5px;
+}
+
+.crud-layer {
+    display: none;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: yellowgreen;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    animation: example 100ms ease-out;
+}
+
+p-card {
+    transition: transform .2s;
+}
+
+p-card:hover .crud-layer {
+    display: flex;
+}
+
+p-card:hover {
+    transform: scale(1.1);
+}
+
+@keyframes example {
+    from {
+        height: 10%;
+    }
+
+    to {
+        height: 50%;
+    }
+}
+
+.p-badge {
+    font-size: 0.5rem !important;
+    font-weight: 700 !important;
+    min-width: 1rem !important;
+    height: 1rem !important;
+    line-height: 1rem !important;
+}
+
+.mockapi-colections {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.mockapi-colections form{
+    width: 40%;
+}
+
+.mockapi-colection {
+    width: 40%;
+    background-color: #ecf4f4;
+    border-radius: 5px;
+    transition: width .3s, background-color .5s ease-out;
+}
+.mockapi-colection>div{
+    padding: 15px;
+    cursor: pointer;
+}
+
+.mockapi-colection:hover {
+    background-color: #3b25cc;
+    color: #ffffff;
+    width: 41%;
+}
+.mockapi-colection:hover i{
+    font-weight: bolder;
+}
+.mockapi-colection > i{
+    width: 100%;
+    text-align: center;
+}
+.p-fieldset .p-fieldset-legend{
+    margin-left: 15px;
+}
